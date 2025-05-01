@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Apex.com</title>
+        <script src="ham.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/10cbb6af71.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Glitch&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-family: Poppins;
+                margin: 0;
+                height: 2000px;
+            }
+            .header{
+                display: flex;
+                height: 70px;
+                justify-content: space-between;
+                background-color: rgb(95,76,76);
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+            }
+            .header-logo{
+                display: flex;
+                align-items: center;
+            }
+            .header-buttons{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .header-image1{
+                width: 26px;
+                height: 26px;
+                margin-left: 24px;
+            }
+            .header-image1:hover{
+                cursor: pointer;
+            }
+            .header-image2{
+                width: 200px;
+                height: 200px;
+            }
+            .header-button1{
+                margin-right: 20px;
+                border: none;
+                background-color: white;
+                color: rgb(95, 76, 76);
+                height: 36px;
+                font-size: 17px;
+                width: 160px;
+                border-radius: 20px;
+                transition: scale 0.5s, box-shadow 0.5s;
+            }
+            .header-button1:hover{
+                scale: 1.1;
+                cursor: pointer;
+                box-shadow: 0px 1px 5px rgba(255, 255, 255, 0.7);
+            }
+            .sidebar{
+                opacity: 0;
+                visibility: hidden;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 400px;
+                width: 250px;
+                color: rgb(95, 76, 76);
+                background-color: white;
+                padding-top: 54px;
+                padding-bottom: 1px;
+                transition: 0.5s ease;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+                transition: opacity 0.2s;
+            }
+            .sidebar.show{
+                opacity: 1;
+                visibility: visible;
+            }
+            .side-logo{
+                width: 20px;
+            }
+            .href-logo{
+                text-align: center;
+                display: flex;
+                align-items: center;
+            }
+            ul{
+                padding: 0;
+            }
+            ul li{
+                list-style: none;
+                line-height: 50px;
+            }
+            ul li a{
+                color: rgb(95, 76, 76);
+                text-decoration: none;
+                display: block;
+                padding: 5px 0 0 16px;
+                transition: 0.4s;
+            }
+            ul li a i{
+                width: 40px;
+            }
+            ul li a:hover{
+                padding-left: 20px;
+                background-color: rgb(225, 225, 225);  
+            }
+            .body-content{
+                padding-top: 10px;
+                height: 760px;
+                width: 100%;
+                background-image: url("gtr.jpeg"); 
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .body-title{
+            color: white;
+            background-color: rgba(0, 0, 0, 0.25);
+            position: absolute;
+            top: 200px;
+            left: 430px;
+            padding: 14px;
+            width: 660px;
+            }
+            .caption{
+                font-size: 20px;
+                text-align: center;
+                margin-top: 0;
+            }
+            .use-div{
+                display: flex;
+                justify-content: center;
+                margin-top: 100px;
+                margin-bottom: 50px;
+            }
+            .use{
+                height: 120px;
+                width: 120px;
+                box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+                margin-left: 60px;
+                margin-right: 60px;
+                border-radius: 10px;
+            }
+            .cap{
+                padding-left: 20px;
+                padding-top: 16px;
+                width: 200px;
+                text-align: center;
+            }
+            .foot{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color:rgb(95, 76, 76);
+                height: 70px;
+            }
+            .footer-button{
+                text-decoration: none;
+                background-color:rgb(95, 76, 76);
+                border: none;
+                color: white;
+                font-size: 18px;
+                margin-right: 10px;
+            }
+            .footer-button:hover{
+                border-bottom: solid;
+                border-width: 1px;
+                border-color: white;
+                cursor: pointer;
+                align-items: stretch;
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="header">
+            <div class="header-logo">
+                <img src="Hamberger-removebg.png" class="header-image1" onclick="toggleSidebar()">
+                <img src="Logo-back.png" class="header-image2">
+            </div>
+            <div class="header-buttons">
+                <a href="host.html"><button class="header-button1" id="button-Host"> Become a Host</button></a>
+                <a href="Login.html"><button class="header-button1" id="button-login"> Login</button></a>
+                <a href="Sign.html"><button class="header-button1" id="button-sign"> Sign-up</button></a>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebarMenu">
+            <ul>
+                <li><a href="#" class="href-logo"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#" class="href-logo"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="host.html" class="href-logo"><i class="fas fa-heart"></i>Become a Host</a></li>
+                <li><a href="about.html" class="href-logo"><i class="fas fa-address-book"></i>About</a></li>
+                <li><a href="#" class="href-logo"><i class="fas fa-cog"></i>Settings</a></li>
+                <li><a href="#" class="href-logo"><i class="fas fa-language"></i>Change Language</a></li>
+                <li><a href="#" class="href-logo" onclick="scrollToContent()"><i class="fas fa-phone"></i>Help and Support</a></li>
+            </ul>
+        </div>
+        <div class="body-content">
+           <h1 class="body-title">Instant Vehicle Access - Car/Bike rental<br>
+            <center><span class="caption">Any where, Any Time.</span></center><h1>
+        </div>
+        <p style="text-align: center;font-family: Montserrat;font-size: 18px;border-bottom: solid;
+                  border-width: 1px;padding-bottom: 10px;border-color: rgb(200, 200, 200);
+                  margin-top: 14px;">
+            How to book a vehicle in Apex.com ?</p>
+        <div class="use-div">
+            <div>
+                <div class="use" style="background-image: url('use-1.jpeg');background-size: cover;"></div>
+                <p class="cap">Log on to Apex.com</p>
+            </div>
+            <div>
+                <div class="use" style="background-image: url('use-2.jpeg');background-size: cover;"></div>
+                <p class="cap">Select city, date and time</p>
+            </div>
+            <div>
+                <div class="use" style="background-image: url('use-3.jpeg');background-size: cover;"></div>
+                <p class="cap">Select a payment option and book</p>
+            </div>
+            <div>
+                <div class="use" style="background-image: url('lambo-red.jpg');background-size: cover;"></div>
+                <p class="cap">Get a vehicle and enjoy the journey</p>
+            </div>
+        </div>
+        <center><img src="logo-big.png" style="width: 400px;height: 140px;object-fit: cover;">
+                <p style="color: rgb(95, 76, 76);font-size: 16px;margin-top: 0;padding-left: 8px;font-weight: bold;">Get a Vehicle Now..!</p></center>
+        <div class="foot" style="margin-top: 100px;" id="foot">
+            <a href="wad/help.html"><button class="footer-button">Help & Support</button></a><br>
+            <div style="color: white;">© 2024 "All Rights reserved"</div>
+        </div>
+        <div class="search-section">
+            <h1>How can we help?</h1>
+            <div class="search-box">
+                <input  type="text" placeholder="Search for a topic or question" class="hello">
+                <button>&#x1F50D;</button>
+            </div>
+        </div>
+    
+        <div class="categories">
+            <h2>What do you need help with?</h2>
+            <p>Here the help and support about your queries</p>
+    
+            <div class="card-container">
+                <div class="card">
+                    <div class="icon">&#x1F6DF;</div>
+                    <h3>General Help</h3>
+                    <p>chat with our team mates</p>
+                    <p>regrading any queries</p>
+                    <p style="margin-bottom: 10px;">here is the chatbot</p>
+                    <span style="margin-top: 0;">
+                        <input type="text" placeholder="enter your queries">
+                        <button class="helpb">send</button>
+                    </span>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x26A1;</div>
+                    <h3>Order history</h3>
+                    <p>viewing past orders</p>
+                    <p>Tracking your current orders</p>
+                    <button class="helpb" style="margin-top: 78px;">History</button>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x1F4C5;</div>
+                    <h3>Booking</h3>
+                    <p>Here is your booking details</p>
+                    <p><i>click here to know your booking status</i></p>
+                    <button class="helpb" style="margin-top: 57.5px;">Booking info</button>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x1F464;</div>
+                    <h3>subscriptions</h3>
+                    <p>How to renew or cancel your subscription</p>
+                    <p>Benefits of subscribing</p>
+                    <button class="helpb" style="margin-top: 56px;">subscription</button>
+                </div>
+            </div>
+        </div>
+        <h3 class="let">Lets keep in touch with.....</h3>
+        <div class="end">
+            <div class="left">
+                <div class="social">
+                    <div>
+                        <a href="https://www.instagram.com/"><img src="insta.png" class="last-icons"></a>
+                    </div>
+                    <div>
+                        <a href="https://www.facebook.com/"><img src="facebook.webp" class="last-icons"></a>
+                    </div>
+                    <div>
+                        <a href="https://x.com/?lang=en"><img src="twitter.png" class="last-icons"></a>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/"></a><img src="youtube.png" class="last-icons1">
+                    </div>
+                </div>
+                <div class="qrcode">
+                    <img src="wad/th.jpeg" alt="qrcode">
+                    <div class="qrcode-matter">
+                        <h2>Scan here To <br> Download APP</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="quote">
+                    <h1>Travel as far as you go</h1>
+                </div>
+            </div>
+        </div>
+        <hr style="border: 1px solid rgb(161, 163, 164); width: 50%; margin: 20px auto; margin-top: 40px;">
+    </body>
+</html>

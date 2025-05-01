@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    background: #87CEEB; /* Sky blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .car {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+  }
+  
+  .body {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    background: rgb(95, 76, 76); /* Sports car color */
+    border-radius: 5px;
+  }
+  
+  .spoiler {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 100px;
+    height: 5px;
+    background: rgb(95, 76, 76);
+    border-radius: 5px;
+  }
+  
+  .window {
+    position: absolute;
+    top: 5px;
+    left: 40px;
+    width: 70px;
+    height: 30px;
+    background: #fff;
+    border-radius: 5px;
+  }
+  
+  .light {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border-radius: 50%;
+  }
+  
+  .wheels {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .wheel {
+    width: 30px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+  }
+  
+  .path {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 300px;
+    height: 50px;
+    background: #2e2e2e; /* Road color */
+    border-radius: 5px;
+    transform: translateX(-50%);
+    overflow: hidden;
+  }
+  
+  .road-markings {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: repeating-linear-gradient(
+      90deg,
+      #fff 0px,
+      #fff 20px,
+      transparent 20px,
+      transparent 40px
+    );
+    transform: translateY(-50%);
+    animation: move-road 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes move-road {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
